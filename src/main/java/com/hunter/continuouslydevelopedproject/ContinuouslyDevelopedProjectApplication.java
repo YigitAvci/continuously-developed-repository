@@ -18,8 +18,4 @@ public class ContinuouslyDevelopedProjectApplication {
 		SpringApplication.run(ContinuouslyDevelopedProjectApplication.class, args);
 	}
 	 */
-
-	public static void main(String[] args) {
-		TryCatchBlockInLoopProgram.start();
-	}
 }

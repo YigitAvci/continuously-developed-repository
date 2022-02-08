@@ -7,10 +7,10 @@ public class ErrorResponse {
     boolean hasError;
     String errorMessage;
 
-    public ErrorResponse(int value, boolean hasError) {
+    public ErrorResponse(int value, boolean hasError, String errorMessage) {
         this.transactionId = value;
         this.hasError = hasError;
-        errorMessage = "this is an error message!";
+        this.errorMessage = errorMessage;
     }
 
     public JsonObject toJson() {

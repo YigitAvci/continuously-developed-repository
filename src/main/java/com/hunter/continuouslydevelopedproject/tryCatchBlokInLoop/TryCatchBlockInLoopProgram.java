@@ -7,7 +7,7 @@ import java.util.List;
 
 public class TryCatchBlockInLoopProgram {
 
-    public static void start() {
+    public static void main(String[] args) {
         List<Integer> transactions = List.of(2, 3, 4);
         JsonArray responses = checkForElements(transactions);
         responses.forEach(System.out::println);
@@ -19,8 +19,8 @@ public class TryCatchBlockInLoopProgram {
             JsonObject response;
             try {
                 response = dividedByEvenNumber(transaction);
-            }catch (ResponseException e) {
-                response = new ErrorResponse(transaction, true).toJson();
+            }catch (ResponseException e) { //if any problem (for example an exception from integrator's response) occurs and interrupt the code inside of try, we can add the responses that are failed anyway
+                response = new ErrorResponse(transaction, true, e.getMessage()).toJson();
             }
             responses.add(response);
         }
