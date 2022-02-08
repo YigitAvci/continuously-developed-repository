@@ -2,7 +2,10 @@ package com.hunter.continuouslydevelopedproject;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import org.springframework.boot.SpringApplication;
+import com.hunter.continuouslydevelopedproject.tryCatchBlokInLoop.ErrorResponse;
+import com.hunter.continuouslydevelopedproject.tryCatchBlokInLoop.ResponseException;
+import com.hunter.continuouslydevelopedproject.tryCatchBlokInLoop.SuccessResponse;
+import com.hunter.continuouslydevelopedproject.tryCatchBlokInLoop.TryCatchBlockInLoopProgram;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.util.List;
@@ -17,29 +20,6 @@ public class ContinuouslyDevelopedProjectApplication {
 	 */
 
 	public static void main(String[] args) {
-		List<Integer> transactions = List.of(2, 3, 4);
-		JsonArray responses = checkForElements(transactions);
-		responses.forEach(System.out::println);
-	}
-
-	static JsonArray checkForElements(List<Integer> transactions) {
-		JsonArray responses = new JsonArray();
-		for (Integer transaction : transactions) {
-			JsonObject response;
-			try {
-				response = dividedByEvenNumber(transaction);
-			}catch (ResponseException e) {
-				response = new ErrorResponse(transaction, true).toJson();
-			}
-			responses.add(response);
-		}
-		return responses;
-	}
-
-	static JsonObject dividedByEvenNumber(int transaction) throws ResponseException {
-		if(transaction % 2 != 0) {
-			throw new ResponseException();
-		}
-		return new SuccessResponse(transaction, "a response data").toJson();
+		TryCatchBlockInLoopProgram.start();
 	}
 }
