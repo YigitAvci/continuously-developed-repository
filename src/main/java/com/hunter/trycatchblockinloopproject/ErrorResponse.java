@@ -1,4 +1,4 @@
-package com.hunter.continuouslydevelopedproject.tryCatchBlokInLoop;
+package com.hunter.trycatchblockinloopproject;
 
 import com.google.gson.JsonObject;
 

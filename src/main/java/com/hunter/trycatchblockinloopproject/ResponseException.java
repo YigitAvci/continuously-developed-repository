@@ -1,4 +1,4 @@
-package com.hunter.continuouslydevelopedproject.tryCatchBlokInLoop;
+package com.hunter.trycatchblockinloopproject;
 
 public class ResponseException extends Exception{
 
